@@ -22,7 +22,7 @@ function Card({
       </div>
       <div className='Card-image'>
         <figure>
-          <img alt='card-p'src={image} />
+          <img src='https://picsum.photos/seed/picsum/200/300' alt={image} />
         </figure>
       </div>
     </div>

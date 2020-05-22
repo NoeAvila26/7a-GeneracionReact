@@ -1,11 +1,31 @@
-.Card {
+.card-article {
+  /* border: 2px solid blue; */
+  max-width: 800px;
   display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  max-width: 600px;
-  cursor: pointer;
+  align-items: center;
+  justify-content: space-between;
+  font-style: normal;
+  font-family: Roboto;
 }
 
-.Card-content {
+.card-body {
   text-align: left;
+}
+.card-category {
+  text-transform: uppercase;
+}
+
+.card-title {
+  font-weight: bold;
+}
+
+.card-author {
+  text-decoration: none;
+  cursor: pointer;
+  color: #000;
+  /* color: #acacace2; */
+}
+
+.card-author:hover {
+  text-decoration: underline;
 }

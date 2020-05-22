@@ -11,8 +11,8 @@ function Home() {
       <div className='Container'>
       <div>
         <Header
-        titlle={'kodemis modulo 3'}
-        description={'aqui aprenderemos react js'}
+        titlle={'kodemia modulo 3'}
+        description={'AQUI APRENDEREMOS REACT JS'}
         />
       </div>
       </div>
@@ -20,4 +20,4 @@ function Home() {
   }
 
 
-export default Home;
+export default Home
