@@ -11,6 +11,7 @@ export default class Menu extends Component {
       isMenuActive: false,
     };
     this.handleToggleMenu = this.handleToggleMenu.bind(this);
+    this.logOut = this.logOut.bind(this)
   }
 
   handleToggleMenu() {
@@ -20,7 +21,13 @@ export default class Menu extends Component {
     });
   }
 
+  logOut() {
+    this.props.logOut()
+    this.toggleMenu()
+  }
+
   render() {
+    const { isUserLogedIn } = this.props
     const { isMenuActive } = this.state;
     const menuClass = isMenuActive ? "Menu-active" : ''
     return (
@@ -33,15 +40,27 @@ export default class Menu extends Component {
                 <li>
                   <Link to="/" onClick={this.handleToggleMenu}>Home</Link>
                 </li>
-                <li>
-                  <Link to="/notes" onClick={this.handleToggleMenu}>Notas</Link>
-                </li>
-                {/* <li>
-                  <Link to="/ConverterValue" onClick={this.handleToggleMenu}>Notas</Link>
-                </li> */}
+                {
+                  isUserLogedIn ? (
+                    <li>
+                      <Link to="/notes" onClick={this.toggleMenu}>Notas</Link>
+                    </li>
+                  ) : null
+                }
                 <li>
                   <Link to="/currency-converter" onClick={this.handleToggleMenu}>Currency Converter</Link>
                 </li>
+                {
+                  !isUserLogedIn ? (
+                    <li>
+                      <Link to="/login" onClick={this.toggleMenu}>Iniciar sesión</Link>
+                    </li>
+                  ) : (
+                    <li>
+                      <button onClick={this.logOut}>Cerrar sesión</button>
+                    </li>
+                  )
+                }
               </ul>
             </div>
           </nav>
